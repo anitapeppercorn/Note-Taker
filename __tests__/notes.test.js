@@ -1,9 +1,8 @@
 const fs = require('fs');
-//   filterByQuery,
 const {
    findById,
-   createNewNotes,
-   validateNotes,
+   createNewnote,
+   validatenote,
 } = require('../lib/notes');
 const { notes } = require('../db/notes');
  
@@ -11,51 +10,53 @@ jest.mock('fs');
  
  
  
-test('creates an notes object', () => {
-   const notes = createNewNotes(
-       { title: "darlene", text: "text", id: "jfdjslkfjs32"},
+test('creates an note object', () => {
+   const note = createNewnote(
+       { title: "darlene", id: "jfdjslkfjs32"},
        notes
    );
  
-   expect(notes.title).toBe("darlene");
-   expect(notes.id).toBe("jfdjslkfjs32")
-   expect(notes.text).toBe("text");
+   expect(note.title).toBe("darlene");
+   expect(note.id).toBe("jfdjslkfjs32")
 })
  
-/*test('filters by query', () => {
-   const startingNotes = [
-       {
-           id:'3',
-           title: 'Erica',
-           body: 'gorilla',
-       },
-       {
-           id: '4',
-           title: "noel",
-           body: 'bear',
-       },
-   ];
- 
-   const updatedNotes = filterByQuery({ text: "gorilla"}, startingNotes)
- 
-   expect(updatedNotes.length).toEqual(1);
-})*/
  
 test('finds by id', () => {
-   const startingNotes = [
+   const startingnotes = [
        {
            id:'3',
            title: 'Erica',
            text: 'gorilla',
-        },
+       },
        {
            id: '4',
            title: "noel",
            text: 'bear',
+ 
        },
    ];
  
-   const result = findById('3', startingNotes);
+   const result = findById('3', startingnotes);
  
    expect(result.title).toBe("Erica")
+})
+ 
+test('validates personality traits', () => {
+   const note = {
+       id:'3',
+       title: 'Erica',
+       text: 'gorilla',
+   };
+ 
+   const invalidnote = {
+       id: "3",
+       title: "Erica",
+ 
+   };
+ 
+   const result = validatenote(note);
+   const result2 = validatenote(invalidnote);
+ 
+   expect(result).toBe(true);
+   expect(result2).toBe(false);
 })
