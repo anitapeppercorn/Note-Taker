@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { filterByQuery, findById, createNewNotes, validateNotes } = require('../../lib/notes');
-const { notes } = require('../../db/notes');
+const notes = require('../../db/notes.json');
+console.log(notes);
+//const { notes } = require('../../db/notes');
  
 /*router.get('/notes', (req, res) => {
    let results = notes;
@@ -9,7 +11,8 @@ const { notes } = require('../../db/notes');
    }
    res.json(results);
 });*/
- 
+
+
 router.get('/notes/:id', (req, res) => {
    const result = findById(req.params.id, notes);
    if (result) {
@@ -20,7 +23,8 @@ router.get('/notes/:id', (req, res) => {
 });
  
 router.post('/notes', (req, res) => {
-   req.notes.id = notes.length.toString();
+   //req.notes.id = notes.length.toString();
+   req.notes.id = notes.length
  
    if (!validateNotes(req.notes)) {
        res.status(400).send('The note is not properly formatted.');
