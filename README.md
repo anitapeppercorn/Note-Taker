@@ -1,14 +1,21 @@
 # Note Taker Starter Code
 This project creates an application called Note Taker that can be used to write and save notes. This application uses an Express.js back end and will save and retrieve note data from a JSON file.
 
-The application’s front end is predefined. I have built the back end, connect the two, and then deployed the entire application to Heroku.
+The application’s front end is predefined. I have built the back end, connected the two, and then deployed the entire application to Heroku at:
+https://sheltered-temple-82689.herokuapp.com/notes
+
 ![license](https://img.shields.io/badge/License-MIT-blue)
+
+This application is deployed to github at:
 https://github.com/anitapeppercorn/Note-Taker
+
 ![Badge](https://img.shields.io/badge/Github-anitapeppercorn-4cbbb9) 
 ![Profile Image](https://github.com/anitapeppercorn.png?size=50)
-View the author's portfolio at:  https://anitapeppercorn.github.io/anitaprofileportfolio/
-![GIF of work](/doc/readme.gif)
 
+View the author's portfolio at:  https://anitapeppercorn.github.io/anitaprofileportfolio/
+
+![GIF of app running on Heroku](/doc/app.gif)
+![image of app](/doc/app-image.png)
 
 ### User Story
 AS A small business owner
@@ -45,7 +52,7 @@ The application has a db.json file on the back end that will be used to store an
 
 The following API routes should be created:
 1. GET /api/notes should read the db.json file and return all saved notes as JSON.
-2. POST /api/notes should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client. We give each note a unique id when it's saved ( npm packages that could do this).
+2. POST /api/notes should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client. We give each note a unique id when it's saved ( used the currentdate and time to do this).
 
 ### Bonus
 DELETE route to the application using the following guideline:
