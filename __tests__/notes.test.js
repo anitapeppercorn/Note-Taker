@@ -3,6 +3,7 @@ const {
    findById,
    createNewnote,
    validatenote,
+   allButId,
 } = require('../lib/notes');
 const { notes } = require('../db/notes');
  
@@ -21,7 +22,7 @@ test('creates an note object', () => {
 })
  
  
-test('finds by id', () => {
+test('find all notes except the id', () => {
    const startingnotes = [
        {
            id:'3',
@@ -36,12 +37,12 @@ test('finds by id', () => {
        },
    ];
  
-   const result = findById('3', startingnotes);
+   const result = allButId('4', startingnotes);
  
    expect(result.title).toBe("Erica")
 })
  
-test('validates personality traits', () => {
+test('validate array content', () => {
    const note = {
        id:'3',
        title: 'Erica',

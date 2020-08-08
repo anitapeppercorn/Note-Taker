@@ -78,7 +78,7 @@ var handleNoteDelete = function(event) {
   deleteNote(note.id).then(function(res) {
     console.log('SERVER RESPONSE=>',res.remaining_notes)
     renderNoteList(res.remaining_notes); //beware this could be huge! try deleting by id on the client
-    // render the remaining notes
+    // render the remaining notes we made these changes to the client side code
     //getAndRenderNotes();
     //renderActiveNote();
   });

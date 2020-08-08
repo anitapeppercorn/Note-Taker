@@ -1,7 +1,17 @@
 [
   {
     "id": "1",
-    "title": "Spindle",
-    "text": "bear"
+    "title": "Start working on mySQL",
+    "text": "Create new starter code for a voting project"
+  },
+  {
+    "id": "2",
+    "title": "Update board bio",
+    "text": "Build from examples provided by Mary "
+  },
+  {
+    "id": "3",
+    "title": "Incorporating Hadeda",
+    "text": "Create documentation for Wilmer-Hale"
   }
 ]
